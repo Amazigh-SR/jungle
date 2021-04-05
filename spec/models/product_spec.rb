@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    it "should validate when product has all 4 fields present" do
+    it "should validate when product has all 4 fields completed" do
       @category = Category.new(name: "test" )
       @product = Product.new(name: "test product", description: "test description", category: @category, quantity: 10, image: "test url", price: 100)
       expect(@product).to be_valid
@@ -30,7 +30,7 @@ RSpec.describe Product, type: :model do
     it "should validate when product category is missing" do
       @product = Product.new(name: "test product", description: "test description", category: @category, quantity: 10, image: "test url", price: 100)
       expect(@product).to_not be_valid
-  end
+    end
 
   end 
    
